@@ -1,0 +1,21 @@
+<%= form_with(model: @blog, local:true ,url: choose_new_or_edit)do |form| %> 
+  <% if @blog.errors.any? %> 
+    <div id="error_explanation"> 
+      <h2><%= @blog.errors.count %>件のエラーがあります。</h2> 
+      <ul>   
+        <% @blog.errors.full_messages.each do |msg| %>
+          <li class="alert alert-danger" role="alert"><%= msg %></li>
+        <% end %> 
+       
+      </ul>
+    </div> 
+  <% end %>
+<div class="blog_title input-group input-group-lg">
+  <span class="input-group-addon">セリフの内容</span>
+  <%= form.text_area :content, class: 'form-control', placeholder: "ここに140文字以内で入力してください" %>
+</div>
+<div class="text_btn">
+  <%= form.submit "送信する", class: 'btn btn-primary btn-lg' %>
+</div>
+<% end %> 
+

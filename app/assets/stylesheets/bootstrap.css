@@ -1,0 +1,12 @@
+nav.navbar.navbar-default{ 
+    margin:0;
+} 
+.row{ 
+    height:500px;  
+    margin-bottom: 100px; 
+    margin-left: 20px !important; 
+    margin-right: 20px !important;
+} 
+.container{
+    background-color: #f5f1ed; 
+}
