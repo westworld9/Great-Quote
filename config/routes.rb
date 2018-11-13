@@ -1,5 +1,6 @@
-Rails.application.routes.draw do
-   get '/top', to: 'top#index'
+Rails.application.routes.draw do 
+  root to: 'top#index'
+   
   resources :blogs do
     collection do 
       post :confirm 
