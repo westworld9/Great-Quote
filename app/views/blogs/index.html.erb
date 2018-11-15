@@ -1,27 +1,15 @@
 <h1>投稿一覧</h1>  
-<p><%= notice %></p>
-<div class="table-responsive table-wrapper-scroll-y">
-  <table class="table">  
-    <thead>
-      <tr>　
-  　     <th scope="col">#</th>
-        <th scope="col">投稿内容</th>
-        <th scope="col">詳細</th>
-        <th scope="col">編集</th> 
-        <th scope="col">削除</th>
-      </tr>  
-    </thead> 
-    <tbody>
-      <% @blogs.each do |blog| %>  
-      <tr>   
-        <th scope="row"><%= blog.id%></th>
-        <td><%= blog.content %></td> 
-        <td><%= link_to "詳細を確認する", blog_path(blog.id), class: "btn btn-info" %></td> 
-        <td><%= link_to "編集" , edit_blog_path(blog.id), class: "btn btn-success" %></td> 
-        <td><%= link_to"削除", blog_path(blog.id), method: :delete, data: {confirm: '本当に削除していいですか'},  class: "btn btn-danger"%></td>
-      </tr>  
-      <% end%>  
-    </tbody>
-  </table>   
-</div> 
+<div class="notice"><p><%= notice %></p></div>
+<% @blogs.each do |blog| %>
+<div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10"> 
+  <div class="box clearfix"> 
+      <h2><%= blog.content%></h2>
+      <ul class="center">
+        <li><%= link_to "詳細", blog_path(blog.id), class: "square_btn" %></li> 
+        <li><%= link_to "編集" , edit_blog_path(blog.id), class: "square_btn" %></li> 
+        <li><%= link_to"削除", blog_path(blog.id), method: :delete, data: {confirm: '本当に削除していいですか'},  class: "square_btn"%></li>
+      </ul> 
+  </div>
+</div>  
+<% end%>
 

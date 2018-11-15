@@ -1,7 +1,8 @@
-class BlogsController < ApplicationController  
+class BlogsController < ApplicationController
+  layout "engines", :only => [:index]
   before_action :set_blog, only:[:show, :edit, :update, :destroy]
     def index  
-      @blogs = Blog.all
+      @blogs = Blog.all.order(id: "DESC")
     end 
     def new 
       if  params[:back]
